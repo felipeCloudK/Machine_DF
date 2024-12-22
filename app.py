@@ -19,7 +19,7 @@ if st.button("Generar Imágenes"):
     random_latent_vectors = np.random.normal(size=(num_images, latent_dim)).astype(np.float32)
 
     # Ejecutar el modelo ONNX con los vectores latentes
-    onnx_output = ort_session.run(None, {"args_0": random_latent_vectors})
+    onnx_output = ort_session.run(None, {"input_1": random_latent_vectors})
 
     # Visualizar las imágenes generadas
     fig, axes = plt.subplots(1, num_images, figsize=(15, 5))
